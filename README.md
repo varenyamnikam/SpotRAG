@@ -1,4 +1,4 @@
-# VidQueryRAG
+# SpotRAG
 
 **VidQueryRAG** is a Retrieval-Augmented Generation (RAG) powered project designed to summarize or retrieve specific timestamps from videos based on user queries. This tool allows users to easily navigate long videos by pinpointing relevant moments, enhancing productivity and user experience.
 
