@@ -1,8 +1,39 @@
-[0.19 - 4.20]:  And like the thing people undervalue the most is literally the first 10 seconds of the video.
-[4.24 - 6.20]: Like, yeah, I can almost, I think I can quote it.
-[6.72 - 10.01]: Uh, I tied up an FBI agent and I have a hundred thousand dollars in this bag.
-[10.39 - 10.87]: Here's a knife.
-[11.33 - 11.71]: Good luck.
-[11.87 - 12.53]: And I just run away.
-[12.69 - 13.91]: Like it gives you everything you need.
-[14.27 - 17.02]: No wasted words, short, concise, and then tension.
+[0.94 - 28.48]:  My cat does stats When she sleeps I like to do stats How about you when I'm awake StatQuest Hello and welcome to StatQuest StatQuest is brought to you by the friendly folks in the genetics department at the University of North Carolina at Chapel Hill
+[29.46 - 33.75]:  Today we're going to be talking about histograms and they're going to be clearly explained.
+[35.21 - 39.13]: Imagine we went out and measured someone and they were this tall.
+[40.33 - 41.91]: And then we measured someone else.
+[43.31 - 45.29]: And then we measured a whole bunch of people.
+[46.51 - 49.69]: We've measured so many people that the dots overlap.
+[50.43 - 52.11]: Some dots are completely hidden.
+[53.29 - 58.58]: We could try to make it easier to see the hidden measurements by stacking any that are exactly the same.
+[59.82 - 66.23]:  but measurements that are the exact same are rare, and a lot of the hidden measurements are still hidden.
+[67.35 - 78.76]: So, instead of stacking measurements that are the exact same, we divide the range of values into bins and stack the measurements that fall in the same bin.
+[79.74 - 82.34]: This, my friends, is a histogram.
+[83.30 - 83.78]: Bam.
+[85.42 - 87.32]: The taller the stack within a bin,
+[87.95 - 90.97]:  the more measurements we made that fall into that bin.
+[92.03 - 92.37]: Duh.
+[93.47 - 97.95]: We can use the histogram to predict the probability of getting future measurements.
+[99.47 - 103.83]: I would be willing to bet that the next measurement we make is somewhere in this range.
+[105.49 - 109.55]: Measurements out here are rare and less likely to happen in the future.
+[110.81 - 115.87]: If you want to use a distribution to approximate your data or future measurements,
+[116.52 - 119.30]:  Histograms are a good way to justify your decision.
+[120.24 - 124.60]: By the way, if you don't know what a distribution is, there's a stat quest for that.
+[125.98 - 131.75]: In this case, we might use a normal distribution to approximate the data and future measurements.
+[133.47 - 141.21]: If the data look like this, we might use an exponential distribution to approximate this data and future measurements.
+[143.24 - 143.50]: Note,
+[144.25 - 147.61]:  Figuring out how wide to make the bends is tricky.
+[148.78 - 152.08]: If the bends are too narrow, then they are not much help.
+[153.02 - 158.40]: In this case, the bends are so narrow that pretty much every measurement gets its own bend.
+[159.04 - 163.68]: This doesn't give us much more insight than what we had before, so it's not very useful.
+[164.96 - 168.07]: And if the bends are too wide, they are not much help.
+[168.95 - 172.75]: In this case, the bends are so wide that the measurements are split 50-50.
+[174.29 - 178.81]:  All this tells us how many measurements are above the average and how many are below.
+[179.53 - 182.51]: This is more insight than before, but we can do better.
+[184.51 - 189.45]: Sometimes you have to try a bunch of different bandwidths before you get a clear picture.
+[190.41 - 196.43]: In other words, don't rely on the default setting of whatever program you're using to draw the histogram.
+[196.99 - 202.77]: You've got to try a bunch of different settings before you're sure that you've got the best histogram you can draw.
+[203.93 - 207.80]:  Hooray, we've made it to the end of another exciting stat quest.
+[208.34 - 213.37]: If you like this stat quest and want to see more like it, please subscribe, it's really easy.
+[214.03 - 218.77]: And if you have any suggestions for future stat quests, just let me know in the comments below.
+[218.79 - 221.50]: Until next time, quest on!
