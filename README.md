@@ -29,9 +29,6 @@
 ## Setup and Installation
 
 ### Prerequisites
-- Python 3.8 or above
-- [FFmpeg](https://ffmpeg.org/) for video processing
-- [https://biteable.com/tools/extract-audio-from-video/](https://ytmp3.la/en-UNh4/)
 - Install dependencies:
   ```bash
   pip install -r requirements.txt
@@ -39,8 +36,8 @@
 
  How to start:
    ```bash
-   git clone https://github.com/yourusername/VidQueryRAG.git
-   cd VidQueryRAG
+   git clone https://github.com/yourusername/spotRAG.git
+   cd VidQueryspotRAG
    pip install -r requirements.txt
-   python app.py
+   python whisperX.py
 
