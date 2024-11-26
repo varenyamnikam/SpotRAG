@@ -1,0 +1,45 @@
+# Python cache files
+*.py[cod]
+__pycache__/
+
+# Virtual environment
+venv/
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Log files
+*.log
+*.txt~
+
+# Ignore compiled files
+*.so
+*.a
+*.out
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Secrets and credentials
+*.env
+*.key
+*.pem
+*.crt
+
+# IDE-specific files
+.vscode/
+.idea/
+*.iml
+
+# Backup and temporary files
+*.bak
+*.swp
+*.tmp
+
+# Generated files
+*.pdf
+*.wav
+*.json
+*.srt
