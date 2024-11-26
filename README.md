@@ -27,17 +27,15 @@
 ---
 
 ## Setup and Installation
-
-### Prerequisites
-- Install dependencies:
-  ```bash
-  pip install -r requirements.txt
+  
 ### Run the Application
 
  How to start:
    ```bash
-   git clone https://github.com/yourusername/spotRAG.git
-   cd VidQueryspotRAG
+   create venv in root dir (imp)
+   git clone https://github.com/varenyamnikam/SpotRAG.git
+   cd SpotRAG
    pip install -r requirements.txt
+   python versions.py (should output true else there are cuda and pytorch incompatibility issues)
    python whisperX.py
 
