@@ -1,4 +1,5 @@
-from fastapi import FastAPI, HTTPException, File, UploadFile, Form
+from fastapi import FastAPI, HTTPException, File, UploadFile, Form, Depends
+from pathlib import Path
 from whisperX import process_video_for_transcription
 from llm import find_answer_with_timestamp
 
@@ -17,21 +18,21 @@ async def process_video_and_find_answer(
     print("Request received.")
 
     try:
-        # Save the uploaded video file temporarily
-        video_path = f"./{video_file.filename}"
-        with open(video_path, "wb") as buffer:
+        # Save uploaded file safely
+        video_path = Path(f"./{video_file.filename}")
+        with video_path.open("wb") as buffer:
             buffer.write(await video_file.read())
 
         # Step 1: Process the video for transcription
-        process_video_for_transcription(video_path, output_dir)
+        process_video_for_transcription(str(video_path), output_dir)
 
         # Step 2: Find the best answer based on the query
         result = find_answer_with_timestamp(query, file_path)
 
-        if "error" in result:
+        if not result or (isinstance(result, dict) and "error" in result):
             raise HTTPException(status_code=404, detail="No valid answer found.")
 
-        return result
+        return {"answer": result}
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

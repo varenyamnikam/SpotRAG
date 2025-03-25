@@ -1,39 +1,211 @@
-[0.94 - 28.48]:  My cat does stats When she sleeps I like to do stats How about you when I'm awake StatQuest Hello and welcome to StatQuest StatQuest is brought to you by the friendly folks in the genetics department at the University of North Carolina at Chapel Hill
-[29.46 - 33.75]:  Today we're going to be talking about histograms and they're going to be clearly explained.
-[35.21 - 39.13]: Imagine we went out and measured someone and they were this tall.
-[40.33 - 41.91]: And then we measured someone else.
-[43.31 - 45.29]: And then we measured a whole bunch of people.
-[46.51 - 49.69]: We've measured so many people that the dots overlap.
-[50.43 - 52.11]: Some dots are completely hidden.
-[53.29 - 58.58]: We could try to make it easier to see the hidden measurements by stacking any that are exactly the same.
-[59.82 - 66.23]:  but measurements that are the exact same are rare, and a lot of the hidden measurements are still hidden.
-[67.35 - 78.76]: So, instead of stacking measurements that are the exact same, we divide the range of values into bins and stack the measurements that fall in the same bin.
-[79.74 - 82.34]: This, my friends, is a histogram.
-[83.30 - 83.78]: Bam.
-[85.42 - 87.32]: The taller the stack within a bin,
-[87.95 - 90.97]:  the more measurements we made that fall into that bin.
-[92.03 - 92.37]: Duh.
-[93.47 - 97.95]: We can use the histogram to predict the probability of getting future measurements.
-[99.47 - 103.83]: I would be willing to bet that the next measurement we make is somewhere in this range.
-[105.49 - 109.55]: Measurements out here are rare and less likely to happen in the future.
-[110.81 - 115.87]: If you want to use a distribution to approximate your data or future measurements,
-[116.52 - 119.30]:  Histograms are a good way to justify your decision.
-[120.24 - 124.60]: By the way, if you don't know what a distribution is, there's a stat quest for that.
-[125.98 - 131.75]: In this case, we might use a normal distribution to approximate the data and future measurements.
-[133.47 - 141.21]: If the data look like this, we might use an exponential distribution to approximate this data and future measurements.
-[143.24 - 143.50]: Note,
-[144.25 - 147.61]:  Figuring out how wide to make the bends is tricky.
-[148.78 - 152.08]: If the bends are too narrow, then they are not much help.
-[153.02 - 158.40]: In this case, the bends are so narrow that pretty much every measurement gets its own bend.
-[159.04 - 163.68]: This doesn't give us much more insight than what we had before, so it's not very useful.
-[164.96 - 168.07]: And if the bends are too wide, they are not much help.
-[168.95 - 172.75]: In this case, the bends are so wide that the measurements are split 50-50.
-[174.29 - 178.81]:  All this tells us how many measurements are above the average and how many are below.
-[179.53 - 182.51]: This is more insight than before, but we can do better.
-[184.51 - 189.45]: Sometimes you have to try a bunch of different bandwidths before you get a clear picture.
-[190.41 - 196.43]: In other words, don't rely on the default setting of whatever program you're using to draw the histogram.
-[196.99 - 202.77]: You've got to try a bunch of different settings before you're sure that you've got the best histogram you can draw.
-[203.93 - 207.80]:  Hooray, we've made it to the end of another exciting stat quest.
-[208.34 - 213.37]: If you like this stat quest and want to see more like it, please subscribe, it's really easy.
-[214.03 - 218.77]: And if you have any suggestions for future stat quests, just let me know in the comments below.
-[218.79 - 221.50]: Until next time, quest on!
+[0.90 - 1.28]:  The End.
+[8.34 - 10.92]:  Hello and welcome to a special episode of After School.
+[11.44 - 16.04]: I'm Andrew Huberman, professor of neurobiology and ophthalmology at Stanford School of Medicine.
+[16.32 - 22.46]: I'm also the host of the Huberman Lab Podcast, a weekly podcast focused on science and science-based tools for everyday life.
+[23.04 - 26.80]: Today you're going to learn about practical tools for optimizing your morning routine.
+[27.18 - 31.30]: So without further ado, practical tools for optimizing your morning routine.
+[32.59 - 38.05]:  there are certain foundational behaviors, do's and don'ts that set the stage for you to be better at everything.
+[38.09 - 43.44]: So a lot of times people will say, how can I lift more, focus better, remember things better?
+[43.46 - 45.96]: It's like, well, let's think about the foundation of that.
+[46.44 - 52.79]: And that's always going to come back to two elements and that's sleep and what I call non-sleep deep rest.
+[53.71 - 55.53]: So sleep is the fundamental.
+[56.96 - 68.16]:  practice or part of our 24 hour cycle where if you don't get it on a consistent basis, you are down regulating your ability to do everything, right?
+[68.42 - 70.98]: Metabolism is screwed up, immune system is screwed up, et cetera, et cetera.
+[72.54 - 77.98]:  It is not the case if you get a one night's bad sleep or that if you're not sleeping perfectly that you can't perform well.
+[78.41 - 81.03]: But let's talk about sleep and just because I think it's important.
+[81.05 - 88.47]: The goal for most people, unless you're pulling vampire shifts on deployment or you're a shift worker and thank you shift workers, we'll talk about shift work.
+[89.21 - 90.61]: You should try and get really good sleep.
+[91.84 - 94.26]:  80% of the time, 80% of the nights of your life.
+[94.42 - 97.66]: The other 20%, I hope you're not getting good sleep for good reasons that you enjoy.
+[98.22 - 100.56]: But the point is that there are a couple of things that you can do.
+[100.64 - 107.27]: First of all, every cell in your body has a circadian rhythm, meaning every cell has a 24 hour circadian clock that's regulated by genes.
+[107.70 - 112.09]: Think of your body as a bunch of millions of clocks and you need to align those clocks to a single time.
+[112.39 - 115.27]: This is why when you travel overseas, your gut goes off or it's more easy
+[116.09 - 122.47]:  more easily you get sick or your thinking isn't quite right, the clocks aren't in alignment, they're not entrained as we say.
+[123.61 - 130.88]: Number one practice for everything, sleep especially, is try and get some natural light in your eyes within an hour of waking up.
+[131.26 - 136.38]: If you wake up before the sun, turn on a bunch of bright lights and then get sunlight in your eyes once it comes out.
+[137.03 - 143.65]: If there's dense cloud cover, there are still more photons, light energy coming through that cloud cover, than there are coming from artificial lights.
+[144.27 - 149.55]:  So try and get five to ten minutes without sunglasses outside in the morning, once the sun is out.
+[150.38 - 151.84]:  most days, if not all days.
+[152.40 - 154.74]: This has an outsized effect on a number of things.
+[154.84 - 157.60]: First of all, it modulates the timing of what's called the cortisol pulse.
+[157.72 - 161.47]: Once every 24 hours, you're gonna get a boost in cortisol, big spike in cortisol.
+[161.49 - 162.27]: It's a healthy boost.
+[162.43 - 168.05]: It sets your temperature rhythm in motion, sets your level of alertness, your level of focus, and your mood.
+[168.41 - 171.25]: You want that cortisol pulse to happen as early in the day as possible.
+[171.29 - 172.89]: What's triggering the cortisol pulse?
+[173.01 - 178.84]: The cortisol pulse is naturally entrained by these genetic programs to happen once every 24 hours, but light will
+[179.59 - 182.20]:  anchor it to the period where you see bright light.
+[182.96 - 194.04]: A late shifted cortisol pulse, so imagine the kid that wakes up and spends the morning in bed or you're spending the morning in bed and you're texting or you're indoors and you're typing on the computer, that's not enough light to accomplish what I'm talking about.
+[194.40 - 203.47]: And then you go outside around noon or one, you're in what's called the circadian dead zone, which is the time in which light arriving at the eyes can do certain things, but it can't time this pulse.
+[203.77 - 208.29]: That means that cortisol pulse is gonna come in the afternoon, which means that your temperature rhythm is gonna be shifted late
+[208.79 - 213.35]:  And that's actually a signature of depression and anxiety and difficulty falling asleep.
+[214.19 - 221.38]: Many people are waking up and they're just spending time indoors and they're putting on sunglasses, getting in their car and driving, or there's cloud cover and they think there's no sun out.
+[221.56 - 225.34]: I don't mean that you actually have to stare at the sun, never stare at any light so bright it's going to damage you.
+[225.36 - 225.82]: Please don't.
+[226.14 - 227.18]: And blink as necessary.
+[227.22 - 232.88]: But the indirect rays from the sun trigger these cells in the eyes called melanopsin ganglion cells.
+[233.68 - 237.83]:  These ganglion cells, these are neurons, they send a signal to your hypothalamus.
+[238.29 - 248.76]: Then the hypothalamus releases this peptide, which is a wake-up signal for your whole brain and body, and sets a timer for the onset of melatonin release 16 hours later, melatonin being the hormone that makes you sleepy and makes you want to go to sleep.
+[249.62 - 253.62]:  So you can imagine what happens if you don't get that light until a few hours later, everything shifted.
+[254.48 - 259.89]: And then you want to go to, you don't know why you're wide awake at 1130 or 12 and everything's messed up.
+[260.59 - 266.37]: The other thing is that you can get bright light from electronic devices early in the day, but it's not enough.
+[267.48 - 269.32]:  You need photons from sunlight.
+[269.36 - 276.62]: Now, if you live in Scandinavia in the depths of winter, if you're up in like, you know, Trondheim or Aarhus or something like, okay, fine.
+[277.43 - 279.23]: Don't buy an expensive daytime simulator.
+[279.29 - 282.01]: Get one of these LED light boxes for drawing.
+[282.05 - 284.47]: They're very inexpensive in comparison.
+[284.65 - 285.53]: You can find them on Amazon.
+[285.55 - 288.53]: I don't have a relationship to any of these brands, but they're easy to find, 20, 30 bucks.
+[288.83 - 291.39]: Put that on your desk and just look at that thing for a few minutes in the morning.
+[291.77 - 294.08]: Not as good, but better than being in the darkness.
+[294.18 - 295.84]: Then when the sun's out, get outside.
+[296.96 - 301.46]:  You know, this is a huge, huge effect for the following reason.
+[301.84 - 306.93]: The signal that arrives from the eyes to the hypothalamus also triggers the release of the neuromodulator dopamine.
+[307.39 - 309.27]: We hear about dopamine as a feel-good molecule.
+[309.29 - 311.57]: Dopamine, dopamine, dopamine, dopamine hits.
+[312.15 - 317.88]: But dopamine's main role in the brain and body is to drive motivation, craving, and pursuit.
+[318.01 - 319.66]: It is not the molecule of pleasure.
+[319.72 - 321.34]: It is the molecule of drive.
+[322.02 - 323.48]: It is life force.
+[324.21 - 330.34]:  Dopamine is actually the molecule from which adrenaline, epinephrine, is manufactured.
+[330.78 - 332.60]: You may notice you said we crave sun.
+[333.10 - 334.49]: It also does make you feel good.
+[334.53 - 335.07]: Here's why.
+[335.27 - 338.65]: If you think about seasonally breeding animals, let's think about the Arctic fox.
+[339.11 - 341.56]: Well, the Arctic fox in winter is white.
+[342.38 - 344.81]:  but in the summertime has darker pelage.
+[345.35 - 350.69]: It actually, there's a pathway going from sunlight to dopamine to melanin production in the skin and fur.
+[351.33 - 355.17]: So animals that transition from light color to dark color, that's all mediated by dopamine.
+[355.37 - 356.23]: Guess what else happens?
+[356.59 - 357.39]: The gonads grow.
+[358.21 - 373.29]:  There are animals that I've worked on in the laboratory and that also in humans, it's now been shown in a beautiful study that people who get 20 to 30 minutes of light on their skin, this was a study done in Israel, so they wear an appropriate amount of clothing, but they're sleeveless, no hat, no sunglasses.
+[373.31 - 377.13]: They were told to go outside 20 or 30 minutes, three times a week, just in the sunshine.
+[377.37 - 378.59]: Ideally they wear shorts also.
+[378.91 - 381.60]: They measure testosterone and estrogen in men and women.
+[383.18 - 389.67]:  Significant increases in both and all the associated things of increased passion, blah, blah, blah, blah.
+[389.69 - 390.97]: That's what they measured in the study.
+[391.65 - 391.93]: Why?
+[391.95 - 395.21]: Well, it turns out that light to the eyes, but also light to the skin.
+[395.25 - 396.69]: The skin is an endocrine organ.
+[396.71 - 399.89]: It's not just something to tattoo and hang earrings from and put clothing on.
+[400.45 - 416.40]:  And actually there's a pathway involving a molecule called p53 and the keratinocytes are these skin cells that when sunlight, when UVB, ultraviolet blue light, penetrates the skin because it can penetrate the skin superficially, triggers these keratinocytes to stimulate a pathway that releases dopamine in the brain and body.
+[416.42 - 419.41]: So you feel better when you're getting light in your eyes and on your skin.
+[419.91 - 423.07]:  and you're increasing testosterone and epinephrine and dopamine increase.
+[423.09 - 424.75]: That's why you feel good in the summer months.
+[424.81 - 427.33]: People in Scandinavia know this, this kind of spring fever.
+[427.85 - 433.11]: In the winter months, you want to go through every bit of effort to double or triple the amount of time that you're spending outside in the morning.
+[433.13 - 434.81]: So instead of 10 minutes, make it 30 minutes.
+[441.02 - 443.58]: We all are familiar with getting sleepy and falling asleep.
+[443.62 - 445.74]: That's the parasympathetic nervous system taking over.
+[446.41 - 454.80]:  The longer we are awake, the longer the buildup of something called adenosine in the brain and body, and adenosine turns on the parasympathetic nervous system, suppresses the sympathetic nervous system.
+[455.18 - 457.98]: When we sleep, adenosine is pushed back down.
+[458.70 - 459.52]: What is caffeine?
+[459.64 - 466.35]: Caffeine effectively, through some chemical steps, blocks the effects of adenosine.
+[466.43 - 467.35]: So here's a little trick.
+[467.41 - 472.98]: I don't like the word hacks because hacks imply using something for a purpose it wasn't designed for.
+[473.02 - 473.68]: Here we're talking about
+[474.79 - 475.85]:  hardwired biology.
+[476.27 - 483.50]: But if you wake up in the morning and you didn't sleep quite as much as you would have liked, and you're sleepy, that means you still have a buildup of adenosine in your system.
+[483.64 - 485.48]: Let's say you immediately reach for caffeine.
+[486.06 - 486.28]: Great.
+[486.62 - 489.46]: You suppress the action of that adenosine and you will be more alert.
+[489.72 - 490.42]: And guess what happens?
+[490.73 - 495.97]: Then the caffeine wears off and the adenosine binds to the receptors with greater affinity and you have your afternoon crash.
+[496.71 - 502.27]:  So a practice that's very useful to people is to delay the intake of caffeine by 60 to 90 minutes after waking.
+[502.61 - 509.09]: Allow the adenosine to be cleared out because it's not just cleared out in sleep, it's also cleared out in those kind of sleepy states of early morning.
+[509.67 - 510.71]: So allow it to be cleared out.
+[510.73 - 513.43]: The other thing that clears it out, exercise.
+[513.63 - 519.98]: So when you get up in the morning, you're kind of sleepy, I don't want to do this, I don't want to do this, but you hydrate and train, you clear out the adenosine.
+[520.50 - 522.98]: Now I like to drink caffeine before I train or during training.
+[523.87 - 524.60]:  I'm weak like that.
+[525.27 - 534.22]: But for people to have an afternoon crash, this can have tremendous benefits of, and maybe start by pushing it out 15 minutes per day.
+[535.12 - 540.47]: Most of everyone that does this says, oh my goodness, I didn't understand why in the afternoon I'm crashing so hard.
+[541.35 - 542.55]: This will really, really help.
+[547.60 - 548.62]: So let me ask you this.
+[548.70 - 549.50]: I have a sense for you.
+[549.52 - 551.30]: What time do you wake up typically?
+[552.59 - 557.27]:  Yeah, generally between, well, between 4.15 and 4.30.
+[557.49 - 561.75]: Okay, so for most people, it's gonna be a little bit later, probably.
+[561.81 - 566.68]: But for you, that means, so you're waking up, if it's because of an alarm, it's because of an alarm.
+[566.72 - 573.22]: But if that's your natural wake up time now without an alarm, that means that your temperature is starting to rise at that time.
+[573.28 - 574.18]: That's why you wake up.
+[574.46 - 577.11]: That temperature increase triggers that cortisol release.
+[577.84 - 581.18]:  Now, and that's why some people wake up right before their alarm clock.
+[581.30 - 583.02]: It's this cortisol pulse, okay?
+[583.56 - 590.11]: And two hours before that, so for you, approximately 2.30 in the morning is what we call your temperature minimum.
+[590.12 - 593.65]: It's when your temperature is lowest that it's ever going to be in the 24 hour cycle.
+[594.97 - 597.67]:  So the way it works is you wake up because of an increase in core body temperature.
+[597.71 - 606.38]: That increase in core body temperature triggers that increase in cortisol, and by viewing light at that time, you ensure that it happens at the same time the next day.
+[606.67 - 609.20]: The clocks of your body are matched to this cortisol pulse.
+[609.96 - 611.40]: So viewing bright light in the morning
+[612.30 - 622.07]:  Anchors, when we say entrained, it through a circuit that involves cells in the eye and cells in the hypothalamus, which then talk to the rest of the cells of the body through a signal, a peptide that's released.
+[622.57 - 629.63]: Make sure that the temperature starts rising, goes up, up, up, up, up, up, and sometime around two or three in the afternoon, you're gonna hit your temperature maximum.
+[631.18 - 638.74]:  You might feel a little sleepy at that time, but that's actually the time in which all your systems are kind of revving at the maximum capacity.
+[639.24 - 642.06]: And then it's gonna start to drop and start to drop, drop, drop.
+[642.12 - 649.50]: Now that drop in temperature eventually will be a full one to three degrees below your temperature maximum.
+[649.84 - 652.00]: And that's when you're gonna get sleepy and fall asleep.
+[652.42 - 654.87]: This is why it's important to keep the room cool at night to fall asleep.
+[658.59 - 664.51]:  The goal here is to increase body temperature in order to be awake and to decrease body temperature in order to be asleep.
+[664.61 - 667.77]: If we stay with those themes, a lot of this will just fall into bins.
+[668.81 - 670.63]: Exercising will increase body temperature.
+[671.24 - 677.20]: Somewhat paradoxically, getting into a cold shower or cold water, everyone says, well, it must make you cold, right?
+[677.28 - 679.66]: Well, if you stay in there a long time, you become hypothermic, right?
+[679.70 - 681.20]: But let's remember the thermostat example.
+[681.22 - 683.60]: You have a little area in your brain called the medial preoptic area.
+[684.42 - 687.49]:  And if you make the surface of your body cold, guess what happens?
+[687.77 - 689.29]: Core body temperature goes up.
+[689.99 - 692.18]: So getting into, so if you're going to do ice baths.
+[692.98 - 697.28]:  or cold showers, you can do, I would say, do them sometime better than not at all.
+[697.80 - 704.06]: There's a beautiful paper published in the European Journal of Physiology in the year 2000, which took people and had them sit.
+[704.12 - 706.58]: They actually had them on lawn chairs, in water, a pool.
+[706.60 - 707.92]: It was a great way to run an experiment.
+[708.46 - 710.30]: I always say, people ask about cold showers.
+[710.32 - 713.42]: There are not a lot of experiments on cold showers, because think about it, it's very hard to control.
+[713.44 - 715.72]: Is everyone under the shower the same way, et cetera.
+[715.74 - 717.30]: You put someone up in water up to their neck,
+[717.96 - 725.65]:  It is experimental rigor that drives that, but they had people get into reasonably cool water, 60 degrees Fahrenheit.
+[725.69 - 731.43]: So it's not that cold, but they had them stand for an hour or they've had people get into very cold water.
+[732.26 - 734.50]:  It's only like 40 degrees for just 20 seconds.
+[734.90 - 735.98]: Now here's what's really interesting.
+[736.02 - 749.99]: That shock that you referred to is adrenaline, also called epinephrine, and it is released from the adrenals, obviously, but also from a site in the brain called locus coeruleus, a little area of the brainstem that then sprinklers the rest of the brain with epinephrine and wakes up the rest of the brain.
+[750.28 - 754.79]: So that shock occurs in the brain and the body, and actually the stuff in the body doesn't cross the blood-brain barrier.
+[754.81 - 755.99]: So you're a two-part system.
+[756.29 - 758.73]: When those two systems are aligned, it's beautiful.
+[758.75 - 760.29]: When those two systems are out of alignment,
+[761.25 - 761.91]:  That's not good.
+[762.57 - 764.64]: So you get into cold water, that's the shock.
+[764.98 - 775.73]: For the first 30 seconds, for most people who are untrained, your forebrain, which is controlling decision making, is basically suppressed in its activity and other areas are ramped up.
+[775.77 - 776.81]: So just know that.
+[777.63 - 778.35]: Exactly, panic.
+[778.65 - 779.85]: Just understand that passes.
+[781.07 - 793.00]:  Then what happens is when you get out of the cold, whether or not it's a longer period at 60 degrees or a short period, I would hate to hear that people are only doing 20 seconds, but maybe a minute to three minutes at 45 degrees or something.
+[793.52 - 796.66]: There's a long arc release of dopamine and epinephrine.
+[796.84 - 800.52]: That's what was shown in the study in humans because people always go, well, it's just in mice.
+[800.70 - 801.98]: No, in humans.
+[802.60 - 808.06]: And that long arc of dopamine leads to a near doubling or more of dopamine and epinephrine.
+[808.74 - 829.64]:  In my colleague Anna Lemke's book called Dopamine Nation, she works on addiction, runs our dual diagnosis addiction clinic at Stanford, she talked about a patient of hers that basically helped himself get over cocaine addiction by doing cold baths because it was the only thing that would give him the kind of dopamine release that even slightly mimicked his cocaine addiction and allowed himself to wean himself off with a healthier behavior.
+[829.89 - 838.52]:  Now, I'm not saying it's the equivalent of a drug like cocaine, but I am saying that it's a better decision than a drug like cocaine, for obvious reasons.
+[838.86 - 841.96]: So that mood enhancing effect that you feel afterwards, it's real.
+[842.66 - 844.29]: It's based on a real neurochemical effect.
+[844.37 - 847.37]: And that dopamine and epinephrine will combine with...
+[848.17 - 853.27]:  the temperature increase from cortisol plus light plus exercise, all things that increase core body temperature.
+[853.67 - 860.04]: Now you've got increased core body temperature, you created a dopamine release epinephrine, you've created a summer month.
+[861.00 - 861.92]:  inside your body.
+[862.42 - 872.08]: I don't care if you live in Minneapolis in the depths of winter or someplace even as cold as New Hampshire, you are creating summer in your body by doing that.
+[872.44 - 883.66]: Now, if you live in San Diego or Los Angeles or Arizona and it's the summer and you're staying indoors and you're on your phone and you're not doing any movement until the afternoon, which is fine to exercise in the afternoon.
+[883.74 - 885.58]: I realize there's some important benefits of that.
+[887.73 - 891.79]:  laying in bed or you're just walking around the kitchen and putting on sunglasses and driving to work, guess what?
+[891.93 - 897.53]: You're creating a Colorado winter inside of your body despite the fact that the sun is out.
+[898.17 - 905.02]: So if you're wondering why you're slightly depressed, your metabolism is lower, your testosterone output is slightly lower than maybe you'd like it to be.
+[905.22 - 906.72]: There could be other reasons too, of course.
+[907.10 - 908.74]: But again, we're talking about modulators.
+[908.96 - 912.77]: I'm not saying getting sun in your eyes in the morning is gonna make your testosterone perfect.
+[913.39 - 916.39]: What I'm saying is you're setting an internal milieu
+[917.05 - 920.65]:  through things that increase core body temperature, dopamine, epinephrine, et cetera.
+[921.64 - 924.32]: And that should be done relatively early in the day.
+[925.75 - 928.13]:  Thank you for joining for this special episode of After School.
+[928.77 - 937.75]: If you'd like to learn more tools for mental health, physical health, and performance, check out the Huberman Lab podcast, which is available on all platforms, YouTube, Apple, Spotify, anywhere podcasts are found.
+[938.21 - 940.85]: Also check out Huberman Lab on both Instagram and Twitter.
+[941.23 - 948.85]: There I cover science and science-based tools, some of which overlaps with the content of the Huberman Lab podcast, but much of which is distinct from the content of the Huberman Lab podcast.
+[949.15 - 956.16]:  We are also Hubermanlab.com, that's our website and there you can find links to all of our social media and all of our podcast episodes.
