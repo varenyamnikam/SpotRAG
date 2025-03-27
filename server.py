@@ -2,8 +2,18 @@ from fastapi import FastAPI, HTTPException, File, UploadFile, Form, Depends
 from pathlib import Path
 from whisperX import process_video_for_transcription
 from llm import find_answer_with_timestamp
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins (for testing)
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods
+    allow_headers=["*"],  # Allow all headers
+)
+
 
 @app.post("/process_video_and_find_answer/")
 async def process_video_and_find_answer(
