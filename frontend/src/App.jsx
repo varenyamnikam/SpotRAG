@@ -127,6 +127,8 @@ const VideoTimestampApp = () => {
 
       const result = await response.json();
       setApiResponse(result);
+      apiResponse?.answer?.timestampstart &&
+        setManualTimestamp(apiResponse.answer.timestampstart);
     } catch (error) {
       console.error("Error processing video:", error);
       alert(`Error processing video: ${error.message}`);
