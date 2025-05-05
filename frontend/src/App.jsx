@@ -1,7 +1,75 @@
-import React, { useRef, useState, useEffect } from "react";
+"use client";
+
+import { useRef, useState, useEffect } from "react";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 import { Upload, Search, PlayIcon } from "lucide-react";
+import "./App.css";
+import "./index.css";
+import "./styles.css";
+
+// IndexedDB Utility Functions
+const DATABASE_NAME = "VideoQueryDB";
+const STORE_NAME = "videoFiles";
+
+const initIndexedDB = () => {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DATABASE_NAME, 1);
+
+    request.onupgradeneeded = (event) => {
+      const db = event.target.result;
+      if (!db.objectStoreNames.contains(STORE_NAME)) {
+        db.createObjectStore(STORE_NAME, { keyPath: "id" });
+      }
+    };
+
+    request.onsuccess = (event) => resolve(event.target.result);
+    request.onerror = (event) => reject(event.target.error);
+  });
+};
+
+const saveFileToIndexedDB = (file) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const db = await initIndexedDB();
+      const transaction = db.transaction([STORE_NAME], "readwrite");
+      const store = transaction.objectStore(STORE_NAME);
+
+      const fileData = {
+        id: "current_video",
+        file: file,
+        timestamp: Date.now(),
+      };
+
+      const request = store.put(fileData);
+
+      request.onsuccess = () => resolve(fileData);
+      request.onerror = (event) => reject(event.target.error);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+
+const getFileFromIndexedDB = () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const db = await initIndexedDB();
+      const transaction = db.transaction([STORE_NAME], "readonly");
+      const store = transaction.objectStore(STORE_NAME);
+
+      const request = store.get("current_video");
+
+      request.onsuccess = (event) => {
+        resolve(event.target.result ? event.target.result.file : null);
+      };
+
+      request.onerror = (event) => reject(event.target.error);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
 
 const VideoTimestampApp = () => {
   const [query, setQuery] = useState("");
@@ -22,18 +90,30 @@ const VideoTimestampApp = () => {
     };
   }, []);
 
-  const handleFileUpload = (event) => {
+  useEffect(() => {
+    // Initialize IndexedDB when component mounts
+    initIndexedDB();
+  }, []);
+
+  const handleFileUpload = async (event) => {
     const file = event.target.files[0];
     if (!file) return;
 
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setVideoFile({
-        file,
-        dataUrl: reader.result,
-      });
-    };
-    reader.readAsDataURL(file);
+    try {
+      // Save file to IndexedDB
+      await saveFileToIndexedDB(file);
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setVideoFile({
+          file,
+          dataUrl: reader.result,
+        });
+      };
+      reader.readAsDataURL(file);
+    } catch (error) {
+      console.error("Error saving file to IndexedDB:", error);
+    }
   };
 
   useEffect(() => {
@@ -80,8 +160,7 @@ const VideoTimestampApp = () => {
 
   useEffect(() => {
     if (isReady && playerRef.current) {
-      const timeToStart = 7 * 60 + 12.6; // Seek to 7:12.6 only once
-      playerRef.current.currentTime(timeToStart);
+      // Additional setup if needed
     }
   }, [isReady]);
 
@@ -97,20 +176,21 @@ const VideoTimestampApp = () => {
     }
   };
 
-  // Updated handleSubmit with API functionality
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!videoFile || !query) {
-      alert("Please upload a video and enter a query");
-      return;
-    }
-
     try {
+      // Retrieve file from IndexedDB
+      const storedFile = await getFileFromIndexedDB();
+
+      if (!storedFile || !query) {
+        alert("Please upload a video and enter a query");
+        return;
+      }
+
       const formData = new FormData();
-      formData.append("video_file", videoFile.file);
+      formData.append("video_file", storedFile);
       formData.append("query", query);
-      // Append additional fields if needed
 
       const response = await fetch(
         "http://127.0.0.1:8000/process_video_and_find_answer/",
@@ -127,8 +207,10 @@ const VideoTimestampApp = () => {
 
       const result = await response.json();
       setApiResponse(result);
-      apiResponse?.answer?.timestampstart &&
-        setManualTimestamp(apiResponse.answer.timestampstart);
+
+      if (result?.answer?.timestampstart) {
+        setManualTimestamp(result.answer.timestampstart);
+      }
     } catch (error) {
       console.error("Error processing video:", error);
       alert(`Error processing video: ${error.message}`);
@@ -140,11 +222,11 @@ const VideoTimestampApp = () => {
       alert("No timestamp available from API.");
       return;
     }
-    jumpToTimestamp(parseFloat(apiResponse.answer.timestamp));
+    jumpToTimestamp(Number.parseFloat(apiResponse.answer.timestamp));
   };
 
   const handleJumpToManualTimestamp = () => {
-    const time = parseFloat(manualTimestamp);
+    const time = Number.parseFloat(manualTimestamp);
     if (isNaN(time) || time < 0) {
       alert("Please enter a valid timestamp (non-negative number).");
       return;
@@ -153,113 +235,97 @@ const VideoTimestampApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-4">
-      <div className="bg-white shadow-2xl rounded-2xl w-full max-w-4xl p-8 space-y-6">
-        <h1 className="text-3xl font-bold text-center text-blue-800 mb-6">
-          Video Timestamp Query
-        </h1>
+    <div className="app-container">
+      <div className="card">
+        <div className="header">
+          <h1>Video Timestamp Finder</h1>
+          <p>Upload a video and find specific moments with ease</p>
+        </div>
 
-        <div className="space-y-6">
+        <div className="content">
           {/* File Upload */}
-          <div className="flex items-center space-x-4">
-            <label className="cursor-pointer relative">
+          <div className="file-upload">
+            <label>Upload Video</label>
+            <div>
               <input
                 ref={fileInputRef}
                 type="file"
                 accept="video/*"
-                className="hidden"
                 onChange={handleFileUpload}
               />
-              <div
-                onClick={() => fileInputRef.current.click()}
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition flex items-center"
-              >
-                <Upload className="mr-2" /> Upload Video
-              </div>
-            </label>
-            {videoFile && (
-              <span className="text-sm text-gray-600 truncate">
-                {videoFile.file.name}
-              </span>
-            )}
+              <button onClick={() => fileInputRef.current.click()}>
+                Select Video
+              </button>
+              {videoFile && (
+                <span className="file-name">{videoFile.file.name}</span>
+              )}
+            </div>
           </div>
 
           {/* Video Player */}
           {videoFile && (
-            <div className="w-full aspect-video bg-black rounded-lg overflow-hidden">
+            <div className="video-container">
               <video
                 ref={videoRef}
                 className="video-js vjs-default-skin"
                 controls
                 preload="auto"
-                width="100%"
-                height="100%"
               />
             </div>
           )}
 
-          {/* Query Input Form */}
+          {/* Query Input */}
           {videoFile && (
-            <>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="flex space-x-4">
-                  <input
-                    type="text"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Enter your video query"
-                    className="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition flex items-center"
-                  >
-                    <Search className="mr-2" /> Find Timestamp
-                  </button>
+            <form onSubmit={handleSubmit}>
+              <div className="input-group">
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="What moment are you looking for?"
+                  className="input-field"
+                />
+                <button type="submit" className="button">
+                  Find Moment
+                </button>
+              </div>
+
+              {/* API Response */}
+              {apiResponse && (
+                <div className="response-box">
+                  <p>
+                    {apiResponse.answer?.timestamp
+                      ? `Found at ${apiResponse.answer.timestamp} seconds`
+                      : "No match found"}
+                  </p>
+                  {apiResponse.answer?.timestamp && (
+                    <button
+                      onClick={handleJumpToApiTimestamp}
+                      className="jump-button"
+                    >
+                      Jump
+                    </button>
+                  )}
                 </div>
+              )}
 
-                {/* API Result Display */}
-                {apiResponse && (
-                  <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg text-center flex items-center justify-between">
-                    <div>
-                      <h3 className="font-semibold text-blue-800">Result</h3>
-                      <p className="text-gray-700">
-                        {apiResponse.answer?.timestamp
-                          ? `Timestamp found: ${apiResponse.answer.timestamp} seconds`
-                          : "No timestamp found"}
-                      </p>
-                    </div>
-                    {apiResponse.answer?.timestamp && (
-                      <button
-                        type="button"
-                        onClick={handleJumpToApiTimestamp}
-                        className="ml-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
-                      >
-                        Jump
-                      </button>
-                    )}
-                  </div>
-                )}
-              </form>
-
-              {/* Manual Timestamp Input */}
-              <div className="flex space-x-4">
+              {/* Manual Timestamp */}
+              <div className="input-group">
                 <input
                   type="number"
-                  step="0.01"
                   value={manualTimestamp}
                   onChange={(e) => setManualTimestamp(e.target.value)}
-                  placeholder="Enter manual timestamp (seconds)"
-                  className="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter timestamp"
+                  className="input-field"
                 />
                 <button
                   onClick={handleJumpToManualTimestamp}
-                  className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition flex items-center"
+                  className="jump-button"
                 >
-                  <PlayIcon className="mr-2" /> Jump to Time
+                  Jump
                 </button>
               </div>
-            </>
+            </form>
           )}
         </div>
       </div>

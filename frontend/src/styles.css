@@ -1,0 +1,176 @@
+/* Layout */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(to bottom, #f1f5f9, #e2e8f0);
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 1.5rem;
+  }
+}
+
+/* Card */
+.card {
+  width: 80%;
+  /* max-width: 600px; */
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px rgba(8, 112, 184, 0.1);
+  border: 1px solid #cbd5e1;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(to right, #7c3aed, #4f46e5);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem; /* Space below the header */
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Content */
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Creates consistent vertical spacing */
+}
+
+/* File Upload */
+.file-upload {
+  margin-bottom: 1.5rem; /* Space below the file upload section */
+}
+
+.file-upload label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-upload button {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #4f46e5;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.file-upload button:hover {
+  background: #4338ca;
+}
+
+.file-upload .file-name {
+  font-size: 0.875rem;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* Video Player */
+.video-container {
+  width: 100%; /* Ensure it takes full width */
+  max-width: 100%; /* Prevent overflow */
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #cbd5e1;
+}
+
+.video-container video {
+  width: 100%; /* Ensure video element takes full width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below video */
+}
+/* Input Fields */
+.input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem; /* Space below the input fields */
+}
+
+.input-field {
+  flex-grow: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.5);
+}
+
+/* Buttons */
+.button {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #4f46e5;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #4338ca;
+}
+
+/* API Response Box */
+.response-box {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem; /* Space below response box */
+}
+
+/* Jump Button */
+.jump-button {
+  padding: 0.5rem 1rem;
+  background: #10b981;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.jump-button:hover {
+  background: #059669;
+}
