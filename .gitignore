@@ -1,7 +1,7 @@
 # Python cache files
 *.py[cod]
 __pycache__/
-
+video_cache/
 # Virtual environment
 venv/
 .env/
@@ -43,3 +43,4 @@ Thumbs.db
 *.wav
 *.json
 *.srt
+* .video_cache

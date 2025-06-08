@@ -15,12 +15,17 @@ def process_video_for_transcription(video_file, output_dir=".", model_type="medi
     :param device: Device to use for processing ("cuda" for GPU, "cpu" for CPU).
     :param compute_type: Compute type ("float16" or "float32").
     """
+    # Convert video_file to absolute path
+    video_file = os.path.abspath(video_file)
+
     # Helper function to print messages in green
     def print_green(message):
         print(f"\033[92m{message}\033[0m")  # ANSI code for green text
 
     # Step 1: Extract audio from video
     audio_file = video_file.rsplit('.', 1)[0] + ".wav"  # Use the same name as the video, with .wav extension
+    audio_file = os.path.abspath(audio_file)  # Ensure audio_file is absolute path
+    print_green(f"Generated audio file path: {audio_file}")
     print_green("Extracting audio from video...")
     try:
         clip = AudioFileClip(video_file)
@@ -39,8 +44,14 @@ def process_video_for_transcription(video_file, output_dir=".", model_type="medi
         print_green(f"Error loading ASR model: {e}")
         return
 
+    print_green(f"Checking if audio file exists before transcription: {audio_file}")
+    print_green(f"os.path.exists(audio_file): {os.path.exists(audio_file)}")
     # Step 3: Transcribe the audio file
     print_green("Transcribing the audio...")
+    # Check if the audio file exists before transcribing
+    if not os.path.exists(audio_file):
+        print_green(f"Error: Audio file not found at {audio_file}")
+        return # Exit the function if file not found
     try:
         transcription_result = asr_model.transcribe(audio_file)
     except Exception as e:
